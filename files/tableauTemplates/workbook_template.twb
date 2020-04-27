@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<workbook xmlns:user="http://www.tableausoftware.com/xml/user" original-version="18.1" source-build="2019.4.0 (20194.20.0113.1110)" version="18.1" xml:base="http://localhost:9100">
+  <document-format-change-manifest>
+    <ISO8601DefaultCalendarPref ignorable="true" predowngraded="true"/>
+    <SheetIdentifierTracking ignorable="true" predowngraded="true"/>
+    <WindowsPersistSimpleIdentifiers/>
+  </document-format-change-manifest>
+  <repository-location id="{{workbookId}}" path="/t/{{siteName}}/workbooks" revision="1.0" site="{{siteName}}"/>
+  <preferences/>
+  <datasources>
+    <datasource caption="{{datasourceName}}" inline="true" name="sqlproxy.1flljkq13zefp713wd1rs07riffw" version="18.1">
+      <repository-location derived-from="http://localhost:9100/t/{{siteName}}/datasources/{{datasourceName}}" id="{{datasourceId}}" path="/t/{{siteName}}/datasources" revision="1.0" site="{{siteName}}"/>
+      <connection channel="https" class="sqlproxy" dbname="{{datasourceName}}" directory="dataserver" port="443" server="prod-useast-a.online.tableau.com" server-ds-friendly-name="{{datasourceName}}" username="">
+        <relation name="sqlproxy" table="[sqlproxy]" type="table"/>
+      </connection>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name="Sheet 1">
+      <repository-location id="Sheet1" path="/t/{{siteName}}/workbooks/{{workbookId}}" revision="" site="{{siteName}}"/>
+      <table>
+        <view>
+          <datasources/>
+          <aggregation value="true"/>
+        </view>
+        <style/>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto"/>
+            </view>
+            <mark class="Automatic"/>
+          </pane>
+        </panes>
+        <rows/>
+        <cols/>
+      </table>
+      <simple-id uuid="{ABB4D593-ED2B-455F-B67A-A6B32B89AD16}"/>
+    </worksheet>
+  </worksheets>
+  <windows>
+    <window class="worksheet" maximized="true" name="Sheet 1">
+      <cards>
+        <edge name="left">
+          <strip size="160">
+            <card type="pages"/>
+            <card type="filters"/>
+            <card type="marks"/>
+          </strip>
+        </edge>
+        <edge name="top">
+          <strip size="31">
+            <card type="columns"/>
+          </strip>
+          <strip size="31">
+            <card type="rows"/>
+          </strip>
+          <strip size="31">
+            <card type="title"/>
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid="{74040921-E28E-4BC1-BC23-369F3DB7C1C1}"/>
+    </window>
+  </windows>
+</workbook>

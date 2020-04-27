@@ -1,0 +1,18 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: postgresdb
+      POSTGRES_USER: postgresadmin
+      POSTGRES_PASSWORD: admin123
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+  redis:
+    image: redis:alpine
+    restart: always
+    ports:
+      - 6379:6379

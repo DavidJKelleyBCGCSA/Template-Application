@@ -1,0 +1,6 @@
+<tsRequest>
+ <datasource name="{{id}}">
+   <connectionCredentials name="{{snowflakeUser}}" password="{{snowflakePass}}"  embed="true" />
+    <project id="{{datasourcesProjectId}}" />
+ </datasource>
+</tsRequest>

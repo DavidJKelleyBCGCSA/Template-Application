@@ -1,0 +1,5 @@
+<tsRequest>
+  <workbook name="{{workbook_name}}" >
+    <project id="{{project_id}}"/>
+  </workbook>
+</tsRequest>

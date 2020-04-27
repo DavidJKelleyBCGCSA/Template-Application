@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<datasource formatted-name='federated.0zh1kuu1r6ea5a1c4g8ci1nt2krk' inline='true' source-platform='linux' version='18.1' xml:base='http://localhost:9100' xmlns:user='http://www.tableausoftware.com/xml/user'>
+    <repository-location id='{{id}}' path='/t/{{siteName}}/datasources' revision='1.0' site='{{siteName}}' />
+    <connection class='federated'>
+    <named-connections>
+        <named-connection caption='{{snowflakeServer}}' name='{{id}}'>
+        <connection authentication='Username Password' class='snowflake' dbname='{{database}}' odbc-connect-string-extras='' one-time-sql='' schema='PUBLIC' server='{{snowflakeServer}}' service='' username='{{snowflakeUser}}' warehouse='' workgroup-auth-mode='' />
+    </named-connection>
+    </named-connections>
+    <relation connection='{{id}}' name='{{table}}' table='[PUBLIC].[{{table}}]' type='table' />
+    </connection>
+</datasource>

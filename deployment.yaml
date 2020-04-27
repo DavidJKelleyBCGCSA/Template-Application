@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consultant-ux-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: consultant-ux-api
+  template:
+    metadata:
+      labels:
+        app: consultant-ux-api
+    spec:
+      containers:      
+        - name: consultant-ux-api
+          image: registry.gitlab.com/omnia-platform/consultant-ux-api:<VERSION>
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - secretRef:
+                name: cux-api-secret
+      imagePullSecrets:
+        - name: regcred-gitlab
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: consultant-ux-api
+  labels:
+    app: consultant-ux-api
+spec:
+  selector:
+    app: consultant-ux-api
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 3000

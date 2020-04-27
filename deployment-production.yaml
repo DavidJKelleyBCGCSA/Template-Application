@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consultant-ux-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: consultant-ux-api
+  template:
+    metadata:
+      labels:
+        app: consultant-ux-api
+    spec:
+      containers:      
+        - name: consultant-ux-api
+          image: registry.gitlab.com/omnia-platform/consultant-ux-api:<VERSION>
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - secretRef:
+                name: cux-api-secret
+      imagePullSecrets:
+        - name: regcred-gitlab
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
+    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:us-east-1:859137627272:certificate/f5485cc8-9348-468f-beb0-01b6ea9ee81b
+    service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "https"
+  labels:
+    app: consultant-ux-api
+  name: consultant-ux-api
+  namespace: default
+spec:
+  ports:
+    - name: https
+      port: 443
+      targetPort: 3000
+      protocol: TCP
+      nodePort: 32678
+  selector:
+    app: consultant-ux-api
+  type: LoadBalancer
