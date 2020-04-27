@@ -1,0 +1,36 @@
+{
+  "get": {
+    "operationId": "listApps",
+    "description": "Lists available apps in app store",
+    "parameters": [
+      {
+        "name": "limit",
+        "in": "query",
+        "description": "Number of items to return",
+        "required": false,
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "description": "Starting item to list",
+        "required": false,
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success",
+        "schema": {
+          "$ref": "../../definitions/appCatalog/catalog.json"
+        }
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

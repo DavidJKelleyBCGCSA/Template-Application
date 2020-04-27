@@ -1,0 +1,26 @@
+{
+  "post": {
+    "operationId": "markAsCompleted",
+    "description": "Mark this setup as completed and adds pipeline event",
+    "parameters": [
+      {
+        "name": "moduleInstanceId",
+        "in": "body",
+        "description": "ID for the moduleInstance of the setup",
+        "required": true,
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

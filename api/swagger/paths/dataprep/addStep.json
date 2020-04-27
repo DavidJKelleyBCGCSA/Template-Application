@@ -1,0 +1,47 @@
+{
+    "post": {
+      "operationId": "addStep",
+      "description": "Adds a step to a widget recipe",
+      "parameters": [
+        {
+            "name": "data",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                    "workspaceId": {
+                        "in": "query",
+                        "description": "ID of workspace for operation",
+                        "required": true,
+                        "type": "integer"
+                      },
+                    "widgetInstanceId":  {
+                        "in": "query",
+                        "description": "ID for the WidgetInstance to set input info",
+                        "required": true,
+                        "type": "integer"
+                      },
+                    "params":  {
+                        "in": "body",
+                        "description": "Params of the step to be added",
+                        "required": true,
+                        "type": "object"
+                      }
+                }
+            }
+        }
+        
+      ],
+      "responses": {
+        "200": {
+          "description": "Success"
+        },
+        "default": {
+          "description": "Error",
+          "schema": {
+            "$ref": "../../definitions/common/errorResponse.json"
+          }
+        }
+      }
+    }
+  }

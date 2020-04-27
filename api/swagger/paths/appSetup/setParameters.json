@@ -1,0 +1,33 @@
+{
+  "post": {
+    "operationId": "setSetupParameters",
+    "description": "Sets setup parameters for a given Module",
+    "parameters": [
+      {
+        "name": "moduleInstanceId",
+        "in": "body",
+        "description": "ID for the moduleInstance of the setup",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "name": "parameters",
+        "in": "body",
+        "description": "Object containing parameters to set.  Note will only overwrite parameters if included in supplied object.  Other parameters will remain in place.",
+        "required": true,
+        "type": "object"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

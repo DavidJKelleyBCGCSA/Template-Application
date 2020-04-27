@@ -1,0 +1,45 @@
+{
+  "post": {
+    "operationId": "identify",
+    "description": "Verifies token and returns user identity",
+    "parameters": [
+        {
+            "name": "data",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                    "token": {
+                        "in": "body",
+                        "description": "Bearer token",
+                        "required": true,
+                        "type": "string"
+                      }
+                }
+            }
+        } 
+    ],
+    "responses": {
+      "200": {
+        "description": "Success",
+        "schema": {
+          "required": [
+            "userId"
+          ],
+          "properties": {
+            "userId": { "type": "string" },
+            "firstName": { "type": "string" },
+            "lastName": { "type": "string" },
+            "company": { "type": "string" }
+          }
+        }
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

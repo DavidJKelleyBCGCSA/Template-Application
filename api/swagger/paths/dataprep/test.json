@@ -1,0 +1,18 @@
+{
+  "get": {
+    "operationId": "test",
+    "description": "Sets the Widget to use as input for the current DataPrep Widget",
+    "parameters": [],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

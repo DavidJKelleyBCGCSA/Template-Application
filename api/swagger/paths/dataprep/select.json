@@ -1,0 +1,47 @@
+{
+  "get": {
+    "operationId": "select",
+    "description": "Executes SQL SELECT operation against the DataPrep dataset applying sort and filter operations",
+    "parameters": [
+      {
+        "name": "workspaceId",
+        "in": "query",
+        "description": "ID of workspace for operation",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "name": "widgetInstanceId",
+        "in": "query",
+        "description": "ID for the WidgetInstance to set source input for",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "description": "Starting offset for the result set (defaults to 0)",
+        "required": false,
+        "type": "integer"
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "description": "Number of rows to return (defaults to streaming entire dataset)",
+        "required": false,
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

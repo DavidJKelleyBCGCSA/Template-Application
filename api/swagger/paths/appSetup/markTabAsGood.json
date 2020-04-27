@@ -1,0 +1,40 @@
+{
+  "post": {
+    "operationId": "markTabAsGood",
+    "description": "Indicates that a setup tab has all eequired data set.",
+    "parameters": [
+      {
+        "name": "moduleInstanceId",
+        "in": "body",
+        "description": "ID for the moduleInstance of the setup",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "name": "key",
+        "in": "body",
+        "description": "unique tab key",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "good",
+        "in": "body",
+        "description": "Are all required data of this tab set ?",
+        "required": true,
+        "type": "boolean"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

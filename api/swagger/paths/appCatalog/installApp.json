@@ -1,0 +1,40 @@
+{
+  "post": {
+    "operationId": "installApp",
+    "description": "Installs App from App Store into user's workspace",
+    "parameters": [
+        {
+            "name": "installation",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                    "appId": {
+                        "in": "body",
+                        "description": "Id of App to install",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    "workspaceId":  {
+                        "in": "body",
+                        "description": "Id of workspace to install App into",
+                        "required": true,
+                        "type": "integer"
+                    }
+                }
+            }
+        }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

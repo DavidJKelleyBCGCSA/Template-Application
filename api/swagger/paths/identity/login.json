@@ -1,0 +1,49 @@
+{  
+  "post": {
+    "security": [],
+    "operationId": "login",
+    "description": "Logs in user and returns a JWT token for subsequent requests",
+    "parameters": [        
+        {
+            "name": "credentials",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                    "username": {
+                        "required": true,
+                        "description": "username (in form of email address)",
+                        "type": "string",
+                        "example": "kropp.matthew@test.com"
+                    },
+                    "password": {
+                        "required": true,
+                        "description": "Password for user",
+                        "type": "string",
+                        "example": "notsafeforpassword"
+                    }
+                }
+            }        
+          }    
+    ],
+    "responses": {
+      "200": {
+        "description": "Success",
+        "schema": {
+          "required": [
+            "token"
+          ],
+          "properties": {
+            "token": { "type": "string" }
+          }
+        }
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

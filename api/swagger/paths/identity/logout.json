@@ -1,0 +1,34 @@
+{  
+  "post": {
+    "security": [],
+    "operationId": "logout",
+    "description": "logout the user",
+    "parameters": [        
+      {
+        "name": "token",
+        "in": "body",
+        "description": "JWT token",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "refreshToken",
+        "in": "body",
+        "description": "JWT refresh token",
+        "required": true,
+        "type": "string"
+      }
+  ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

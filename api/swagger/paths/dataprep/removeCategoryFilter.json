@@ -1,0 +1,47 @@
+{
+  "post": {
+    "operationId": "removeCategoryFilter",
+    "description": "Removes a sort operation from the dataprep widget",
+    "parameters": [
+        {
+            "name": "data",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                    "workspaceId": {
+                        "in": "body",
+                        "description": "ID of workspace for operation",
+                        "required": true,
+                        "type": "integer"
+                      },
+                    "widgetInstanceId":  {
+                        "in": "body",
+                        "description": "ID for the WidgetInstance to set source input for",
+                        "required": true,
+                        "type": "integer"
+                      },
+                    "stepIndex":  {
+                        "in": "body",
+                        "description": "Index of the item on the steps",
+                        "required": true,
+                        "type": "integer"
+                      } 
+                }
+            }
+        }
+      
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "post": {
+    "operationId": "addFilter",
+    "description": "Adds a filter operation to dataprep widget",
+    "parameters": [
+        {
+            "name": "filter",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                   "workspaceId": {
+                        "in": "body",
+                        "description": "ID of workspace for operation",
+                        "required": true,
+                        "type": "integer"
+                      },
+                     "widgetInstanceId": {
+                        "in": "body",
+                        "description": "ID for the WidgetInstance to set source input for",
+                        "required": true,
+                        "type": "integer"
+                      },
+                     "params": {
+                        "in": "body",
+                        "description": "Params of the step to be added",
+                        "required": true,
+                        "type": "object"
+                      }
+                }
+            }
+        }      
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

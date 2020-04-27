@@ -1,0 +1,36 @@
+{  
+  "post": {
+    "security": [],
+    "operationId": "lookup",
+    "description": "Lookup email address to determine how to proceed with login",
+    "parameters": [        
+        {
+            "name": "email",
+            "in": "body",
+            "schema": {
+                "type":"string"
+            },
+            "description": "The email address"
+          }    
+    ],
+    "responses": {
+      "200": {
+        "description": "Continue with redirect",
+        "schema": {
+          "properties": {
+            "redirect": { "type": "string" }
+          }
+        }
+      },
+      "204": {
+        "description": "Continue"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

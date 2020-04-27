@@ -1,0 +1,52 @@
+{
+  "post": {
+    "operationId": "registerApp",
+    "description": "Called by App starting up in Kubernetes cluster to register as available on App Store",
+    "parameters": [
+        {
+            "name": "registerapp",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                    "name: ": {
+                        "in": "body",
+                        "description": "Name of app as listed in AppStore",
+                        "required": true,
+                        "type": "string"
+                    },
+                    "description":  {
+                        "in": "body",
+                        "description": "Description of App for listing in AppStore",
+                        "required": true,
+                        "type": "string"
+                    },
+                    "version":  {
+                        "in": "body",
+                        "description": "Version number to be deployed.  Will overwrite versions of same number",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    "environment":  {
+                        "in": "body",
+                        "description": "Environment to deploy into (Staging, Production)",
+                        "required": true,
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      }
+    },
+    "default": {
+      "description": "Error",
+      "schema": {
+        "$ref": "../../definitions/common/errorResponse.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{  
+  "post": {
+    "security": [],
+    "operationId": "callback",
+    "description": "SAML callback for BCG Okta, redirects to app homepage",
+    "parameters": [
+      {
+        "name": "payload",
+        "in": "body",
+        "schema": {
+          "type":"string"
+        },
+        "description": "The SAML assertion"
+      }
+    ],
+    "responses": {
+      "302": {
+        "description": "Redirect"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "get": {
+    "operationId": "preview",
+    "description": "Returns stream of rows for preview of dataprep output",
+    "parameters": [
+      {
+        "name": "workspaceId",
+        "in": "query",
+        "description": "Id of workspace",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "name": "widgetInstanceId",
+        "in": "query",
+        "description": "Id of widget",
+        "required": true,
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

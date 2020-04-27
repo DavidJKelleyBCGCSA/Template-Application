@@ -1,0 +1,46 @@
+{
+    "post": {
+      "operationId": "removeStep",
+      "description": "Removes a step from a widget recipe",
+      "parameters": [
+        {
+            "name": "data",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                    "workspaceId": {
+                        "in": "query",
+                        "description": "ID of workspace for operation",
+                        "required": true,
+                        "type": "integer"
+                      },
+                    "widgetInstanceId":  {
+                        "in": "query",
+                        "description": "ID for the WidgetInstance to set input info",
+                        "required": true,
+                        "type": "integer"
+                      },
+                    "stepIndex":  {
+                        "in": "body",
+                        "description": "Index of the item on the steps",
+                        "required": true,
+                        "type": "integer"
+                      }
+                }
+            }
+        }        
+      ],
+      "responses": {
+        "200": {
+          "description": "Success"
+        },
+        "default": {
+          "description": "Error",
+          "schema": {
+            "$ref": "../../definitions/common/errorResponse.json"
+          }
+        }
+      }
+    }
+  }

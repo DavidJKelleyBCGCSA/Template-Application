@@ -1,0 +1,33 @@
+{
+    "get": {
+      "operationId": "inputInfo",
+      "description": "Gets the input info",
+      "parameters": [
+        {
+          "name": "workspaceId",
+          "in": "query",
+          "description": "ID of workspace for operation",
+          "required": true,
+          "type": "integer"
+        },
+        {
+          "name": "widgetInstanceId",
+          "in": "query",
+          "description": "ID for the WidgetInstance to set input info",
+          "required": true,
+          "type": "integer"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Success"
+        },
+        "default": {
+          "description": "Error",
+          "schema": {
+            "$ref": "../../definitions/common/errorResponse.json"
+          }
+        }
+      }
+    }
+  }

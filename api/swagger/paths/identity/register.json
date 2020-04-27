@@ -1,0 +1,68 @@
+{  
+  "post": {
+    "security": [],
+    "operationId": "register",
+    "description": "Registers new user and returns a JWT token for subsequent requests",
+    "parameters": [
+        { 
+            "name": "registration",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                    "userId": {
+                        "in": "body",
+                        "description": "UserId (in form of email address)",
+                        "required": true,
+                        "type": "string"
+                      },
+                    "password": {
+                        "in": "body",
+                        "description": "Password for user",
+                        "required": true,
+                        "type": "string"
+                      },
+                    "firstName":  {
+                        "name": "",
+                        "in": "body",
+                        "description": "First name of user",
+                        "required": true,
+                        "type": "string"
+                      },
+                    "lastName":  {
+                        "in": "body",
+                        "description": "Last name of user",
+                        "required": true,
+                        "type": "string"
+                      },
+                    "company" : {
+                        "in": "body",
+                        "description": "Compay name of user",
+                        "required": false,
+                        "type": "string"
+                      }
+                }
+            }
+        }      
+    ],
+    "responses": {
+      "200": {
+        "description": "Success",
+        "schema": {
+          "required": [
+            "token"
+          ],
+          "properties": {
+            "token": { "type": "string" }
+          }
+        }
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

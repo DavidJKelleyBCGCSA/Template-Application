@@ -1,0 +1,70 @@
+{
+  "post": {
+    "operationId": "getUploadToken",
+    "description": "Generates a token to used for called to upload endpoint",
+    "parameters": [
+        {
+            "name": "data",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                    "workspaceId": {
+                        "in": "body",
+                        "description": "Id of workspace",
+                        "required": true,
+                        "type": "integer"
+                      },
+                    "widgetInstanceId":  {
+                        "in": "body",
+                        "description": "Id of widget",
+                        "required": true,
+                        "type": "integer"
+                      },
+                    "tabName":  {
+                        "in": "body",
+                        "description": "Name of tab (for Excel uploads)",
+                        "required": false,
+                        "type": "string"
+                      },
+                    "filename":  {
+                        "in": "body",
+                        "description": "Name of source file (including extension)",
+                        "required": true,
+                        "type": "string"
+                      },
+                    "fileIdHash":  {
+                        "in": "body",
+                        "description": "Hash of filename, modification date and size.  Used to determine if file has changed",
+                        "required": true,
+                        "type": "string"
+                      },
+                    "size":  {
+                        "in": "body",
+                        "description": "Size in bytes of file",
+                        "required": true,
+                        "type": "integer"
+                      },
+                    "schema":  {
+                        "in": "body",
+                        "description": "Schema describing file in form {name, type}",
+                        "required": true,
+                        "type": "object"
+                      }
+                }
+            }
+        }      
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

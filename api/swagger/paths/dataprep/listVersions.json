@@ -1,0 +1,33 @@
+{
+  "get": {
+    "operationId": "listVersions",
+    "description": "Returns list of versions of recipes results for Data Prep widget",
+    "parameters": [
+      {
+        "name": "workspaceId",
+        "in": "query",
+        "description": "Id of workspace",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "name": "widgetInstanceId",
+        "in": "query",
+        "description": "Id of widget",
+        "required": true,
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{  
+  "get": {
+    "security": [],
+    "operationId": "bcg",
+    "description": "Redirect to BCG Okta login",
+    "responses": {
+      "302": {
+        "description": "Redirect"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

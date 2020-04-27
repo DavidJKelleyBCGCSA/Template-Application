@@ -1,0 +1,40 @@
+{
+  "get": {
+    "operationId": "download",
+    "description": "downloads a csv of the dataprep version",
+    "parameters": [
+      {
+        "name": "workspaceId",
+        "in": "query",
+        "description": "Id of workspace",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "name": "widgetInstanceId",
+        "in": "query",
+        "description": "Id of widget",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "name": "version",
+        "in": "query",
+        "description": "version to download",
+        "required": false,
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

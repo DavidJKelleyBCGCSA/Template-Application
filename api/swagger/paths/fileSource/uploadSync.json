@@ -1,0 +1,53 @@
+
+{
+  "post": {
+    "operationId": "upload",
+    "description": "Uploads file to insert into data warehouse",
+    "parameters": [
+        {
+            "name": "data",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                    "workspaceId": {
+                        "in": "body",
+                        "description": "Id of workspace",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    "widgetInstanceId":  {
+                        "in": "body",
+                        "description": "Id of widget",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    "token":  {
+                        "in": "body",
+                        "description": "Token identifying upload target",
+                        "required": true,
+                        "type": "string"
+                    },
+                    "data":  {
+                        "in": "body",
+                        "description": "json list",
+                        "required": true,
+                        "type": "array"
+                    }
+                }
+            }
+        }      
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{  
+  "post": {
+    "security": [],
+    "operationId": "refreshToken",
+    "description": "Registers new user and returns a JWT token for subsequent requests",
+    "parameters": [
+        { 
+            "name": "get a new couple of tokens",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                    "token": {
+                        "in": "body",
+                        "description": "the refresh token",
+                        "required": true,
+                        "type": "string"
+                      }
+                }
+            }
+        }      
+    ],
+    "responses": {
+      "200": {
+        "description": "Success",
+        "schema": {
+          "required": [
+            "token"
+          ],
+          "properties": {
+            "token": { "type": "string" }
+          }
+        }
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

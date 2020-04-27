@@ -1,0 +1,26 @@
+{
+  "get": {
+    "operationId": "listSetupTabs",
+    "description": "Gets setup tabs for the Module",
+    "parameters": [
+      {
+        "name": "moduleInstanceId",
+        "in": "query",
+        "description": "ID for the moduleInstance of the setup",
+        "required": true,
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

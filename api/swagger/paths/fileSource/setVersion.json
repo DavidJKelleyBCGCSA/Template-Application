@@ -1,0 +1,46 @@
+{
+  "post": {
+    "operationId": "setVersion",
+    "description": "Sets currently active version for File Source widget",
+    "parameters": [
+        {
+            "name": "data",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                    "workspaceId": {
+                        "in": "body",
+                        "description": "Id of workspace",
+                        "required": true,
+                        "type": "integer"
+                      },
+                    "widgetInstanceId":  {
+                        "in": "body",
+                        "description": "Id of widget",
+                        "required": true,
+                        "type": "integer"
+                      },
+                    "version":  {
+                        "in": "body",
+                        "description": "Version of file source to use",
+                        "required": false,
+                        "type": "integer"
+                      }
+                }
+            }
+        }      
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}
