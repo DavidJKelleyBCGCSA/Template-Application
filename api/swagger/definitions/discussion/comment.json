@@ -1,0 +1,20 @@
+{
+    "properties": {
+      "user": {"type": "object", "$ref": "./../user/user.json"},
+      "text": {"type": "string"},
+      "mentions": { 
+          "type":  "array",
+            "items": {
+                "type": "object", 
+                "$ref": "./../user/user.json"
+            }
+      },
+      "workspaceId": {"type": "integer"},
+      "moduleInstanceId": {"type": "integer"},
+      "widgetInstanceId": {"type": "integer"},
+      "workspace": {"type": "object", "$ref": "./../workspace/workspaceLight.json"},
+      "moduleInstance": {"type": "object", "$ref": "./../workspace/moduleLight.json"},
+      "widgetInstance": {"type": "object", "$ref": "./../workspace/widgetLight.json"}
+
+    }
+  }

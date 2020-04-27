@@ -1,0 +1,10 @@
+{
+  "required": [
+    "cardType"
+  ],
+  "properties": {
+    "cardType": {
+      "type": "string"
+    }
+  }
+}

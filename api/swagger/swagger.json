@@ -1,0 +1,363 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.0.1",
+    "title": "consultant-ux-api - API driving core Consultant UX application"
+  },
+  "host": "localhost:3000",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json",
+    "application/x-www-form-urlencoded"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "securityDefinitions": {
+    "Bearer": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "Authorization",
+      "description": "Insert here the 'token' field value obtained as a response of the 'login' endpoint call"
+    }
+  },
+  "security": [
+    {
+      "Bearer": []
+    }
+  ],
+  "paths": {
+    "/api/appCatalog/listApps": {
+      "$ref": "./paths/appCatalog/listApps.json"
+    },
+    "/api/appCatalog/registerApp": {
+      "$ref": "./paths/appCatalog/registerApp.json"
+    },
+    "/api/appCatalog/installApp": {
+      "$ref": "./paths/appCatalog/installApp.json"
+    },
+    "/api/user/getRecentWorkspacesActivity": {
+      "$ref": "./paths/user/getRecentWorkspacesActivity.json"
+    },
+    "/api/user/getRecentComments": {
+      "$ref": "./paths/user/getRecentComments.json"
+    },
+    "/api/user/listUsersByFullName": {
+      "$ref": "./paths/user/listUsersByFullName.json"
+    },
+    "/api/user/getRecentActivities": {
+      "$ref": "./paths/user/getRecentActivities.json"
+    },
+    "/api/user/listUserEmails": {
+      "$ref": "./paths/user/listUserEmails.json"
+    },
+    "/api/dataprep/addSort": {
+      "$ref": "./paths/dataprep/addSort.json"
+    },
+    "/api/dataprep/addCategoryFilter": {
+      "$ref": "./paths/dataprep/addCategoryFilter.json"
+    },
+    "/api/dataprep/addRangeFilter": {
+      "$ref": "./paths/dataprep/addRangeFilter.json"
+    },
+    "/api/dataprep/addStep": {
+      "$ref": "./paths/dataprep/addStep.json"
+    },
+    "/api/dataprep/addFilter": {
+      "$ref": "./paths/dataprep/addFilter.json"
+    },
+    "/api/dataprep/removeFilter": {
+      "$ref": "./paths/dataprep/removeFilter.json"
+    },
+    "/api/dataprep/removeSort": {
+      "$ref": "./paths/dataprep/removeSort.json"
+    },
+    "/api/dataprep/removeRangeFilter": {
+      "$ref": "./paths/dataprep/removeRangeFilter.json"
+    },
+    "/api/dataprep/download": {
+      "$ref": "./paths/dataprep/download.json"
+    },
+    "/api/dataprep/inputInfo": {
+      "$ref": "./paths/dataprep/inputInfo.json"
+    },
+    "/api/dataprep/listVersions": {
+      "$ref": "./paths/dataprep/listVersions.json"
+    },
+    "/api/dataprep/preview": {
+      "$ref": "./paths/dataprep/preview.json"
+    },
+    "/api/dataprep/runRecipe": {
+      "$ref": "./paths/dataprep/runRecipe.json"
+    },
+    "/api/dataprep/removeStep": {
+      "$ref": "./paths/dataprep/removeStep.json"
+    },
+    "/api/dataprep/select": {
+      "$ref": "./paths/dataprep/select.json"
+    },
+    "/api/dataprep/setVersion": {
+      "$ref": "./paths/dataprep/setVersion.json"
+    },
+    "/api/datajoin/joinWidgets": {
+      "$ref": "./paths/datajoin/joinWidgets.json"
+    },
+    "/api/dataprep/test": {
+      "$ref": "./paths/dataprep/test.json"
+    },
+    "/api/fileSource/getUploadToken": {
+      "$ref": "./paths/fileSource/getUploadToken.json"
+    },
+    "/api/fileSource/upload": {
+      "$ref": "./paths/fileSource/upload.json"
+    },
+    "/api/fileSource/listVersions": {
+      "$ref": "./paths/fileSource/listVersions.json"
+    },
+    "/api/fileSource/setVersion": {
+      "$ref": "./paths/fileSource/setVersion.json"
+    },
+    "/api/fileSource/preview": {
+      "$ref": "./paths/fileSource/preview.json"
+    },
+    "/api/fileSource/download": {
+      "$ref": "./paths/fileSource/download.json"
+    },
+    "/api/fileSource/uploadSync": {
+      "$ref": "./paths/fileSource/uploadSync.json"
+    },
+    "/api/identity/identify": {
+      "$ref": "./paths/identity/identify.json"
+    },
+    "/api/identity/login": {
+      "$ref": "./paths/identity/login.json"
+    },
+    "/api/identity/logout": {
+      "$ref": "./paths/identity/logout.json"
+    },
+    "/api/identity/register": {
+      "$ref": "./paths/identity/register.json"
+    },
+    "/api/identity/refreshToken": {
+      "$ref": "./paths/identity/refreshToken.json"
+    },
+    "/login/lookup": {
+      "$ref": "./paths/login/lookup.json"
+    },
+    "/login/bcg": {
+      "$ref": "./paths/login/bcg.json"
+    },
+    "/login/callback": {
+      "$ref": "./paths/login/callback.json"
+    },
+    "/api/module/getActivities": {
+      "$ref": "./paths/module/getActivities.json"
+    },
+    "/api/module/getModule": {
+      "$ref": "./paths/module/getModule.json"
+    },
+    "/api/module/listModules": {
+      "$ref": "./paths/module/listModules.json"
+    },
+    "/api/module/createModule": {
+      "$ref": "./paths/module/createModule.json"
+    },
+    "/api/module/updateModule": {
+      "$ref": "./paths/module/updateModule.json"
+    },
+    "/api/module/deleteModule": {
+      "$ref": "./paths/module/deleteModule.json"
+    },
+    "/api/module/addComment": {
+      "$ref": "./paths/module/addComment.json"
+    },
+    "/api/module/getComments": {
+      "$ref": "./paths/module/getComments.json"
+    },
+    "/api/visualization/listCharts": {
+      "$ref": "./paths/visualization/listCharts.json"
+    },
+    "/api/visualization/createChart": {
+      "$ref": "./paths/visualization/createChart.json"
+    },
+    "/api/visualization/downloadPDF": {
+      "$ref": "./paths/visualization/downloadPDF.json"
+    },
+     "/api/visualization/downloadWorkbookTemplateFromWorkbook": {
+       "$ref": "./paths/visualization/downloadWorkbookTemplateFromWorkbook.json"
+    },
+    "/api/visualization/updateChart": {
+      "$ref": "./paths/visualization/updateChart.json"
+    },
+    "/api/visualization/deleteChart": {
+      "$ref": "./paths/visualization/deleteChart.json"
+    },
+    "/api/visualization/getTrustedToken": {
+      "$ref": "./paths/visualization/getTrustedToken.json"
+    },
+    "/api/widget/setInput": {
+      "$ref": "./paths/widget/setInput.json"
+    },
+    "/api/widget/removeInput": {
+      "$ref": "./paths/widget/removeInput.json"
+    },
+    "/api/widget/setOutput": {
+      "$ref": "./paths/widget/setOutput.json"
+    },
+    "/api/widget/removeOutput": {
+      "$ref": "./paths/widget/removeOutput.json"
+    },
+    "/api/widget/getParameters": {
+      "$ref": "./paths/widget/getParameters.json"
+    },
+    "/api/widget/setParameters": {
+      "$ref": "./paths/widget/setParameters.json"
+    },
+    "/api/widget/addComment": {
+      "$ref": "./paths/widget/addComment.json"
+    },
+    "/api/widget/getComments": {
+      "$ref": "./paths/widget/getComments.json"
+    },
+    "/api/widget/execute": {
+      "$ref": "./paths/widget/execute.json"
+    },
+    "/api/widget/getOutputStream": {
+      "$ref": "./paths/widget/getOutputStream.json"
+    },
+    "/api/widget/saveOutput": {
+      "$ref": "./paths/widget/saveOutput.json"
+    },
+    "/api/widget/setOutputSchema": {
+      "$ref": "./paths/widget/setOutputSchema.json"
+    },
+    "/api/widget/listWidgetsByModuleInstance": {
+      "$ref": "./paths/widget/listWidgetsByModuleInstance.json"
+    },
+    "/api/widget/listWidgetsClasses": {
+      "$ref": "./paths/widget/listWidgetsClasses.json"
+    },
+    "/api/widget/getWidget": {
+      "$ref": "./paths/widget/getWidget.json"
+    },
+    "/api/widget/setDataQuality": {
+      "$ref": "./paths/widget/setDataQuality.json"
+    },
+    "/api/widget/getWidgetInputData": {
+      "$ref": "./paths/widget/getWidgetInputData.json"
+    },
+    "/api/widget/listOutputs": {
+      "$ref": "./paths/widget/listOutputs.json"
+    },
+    "/api/widget/getActivities": {
+      "$ref": "./paths/widget/getActivities.json"
+    },
+    "/api/widget/listOutputsByWidgetInstance": {
+      "$ref": "./paths/widget/listOutputsByWidgetInstance.json"
+    },
+    "/api/widget/listInputsByWidgetInstance": {
+      "$ref": "./paths/widget/listInputsByWidgetInstance.json"
+    },
+    "/api/widget/widgetFlow": {
+      "$ref": "./paths/widget/widgetFlow.json"
+    },
+    "/api/widget/createWidget": {
+      "$ref": "./paths/widget/createWidget.json"
+    },
+    "/api/widget/updateWidget": {
+      "$ref": "./paths/widget/updateWidget.json"
+    },
+    "/api/widget/updateInputSchema": {
+      "$ref": "./paths/widget/updateInputSchema.json"
+    },
+    "/api/widget/deleteWidget": {
+      "$ref": "./paths/widget/deleteWidget.json"
+    },
+    "/api/widget/setParametersSlug": {
+      "$ref": "./paths/widget/setParametersSlug.json"
+    },
+    "/api/widget/listWidgetsAvailableToConnect": {
+      "$ref": "./paths/widget/listWidgetsAvailableToConnect.json"
+    },
+    "/api/workspace/listWorkspaces": {
+      "$ref": "./paths/workspace/listWorkspaces.json"
+    },
+    "/api/workspace/createWorkspace": {
+      "$ref": "./paths/workspace/createWorkspace.json"
+    },
+    "/api/workspace/updateWorkspace": {
+      "$ref": "./paths/workspace/updateWorkspace.json"
+    },
+    "/api/workspace/updateStatus": {
+      "$ref": "./paths/workspace/updateStatus.json"
+    },
+    "/api/workspace/deleteWorkspace": {
+      "$ref": "./paths/workspace/deleteWorkspace.json"
+    },
+    "/api/workspace/getActivities": {
+      "$ref": "./paths/workspace/getActivities.json"
+    },
+    "/api/workspace/getWorkspace": {
+      "$ref": "./paths/workspace/getWorkspace.json"
+    },
+    "/api/workspace/inviteMembers": {
+      "$ref": "./paths/workspace/inviteMembers.json"
+    },
+    "/api/workspace/addComment": {
+      "$ref": "./paths/workspace/addComment.json"
+    },
+    "/api/workspace/getComments": {
+      "$ref": "./paths/workspace/getComments.json"
+    },
+    "/api/appSetup/markTabAsGood": {
+      "$ref": "./paths/appSetup/markTabAsGood.json"
+    },
+    "/api/appSetup/listSetupTabs": {
+      "$ref": "./paths/appSetup/listSetupTabs.json"
+    },
+    "/api/appSetup/markAsCompleted": {
+      "$ref": "./paths/appSetup/markAsCompleted.json"
+    },
+    "/api/appSetup/setParameters": {
+      "$ref": "./paths/appSetup/setParameters.json"
+    },
+    "/api/appSetup/getParameters": {
+      "$ref": "./paths/appSetup/getParameters.json"
+    },
+    "/api/modelWidget/getJupyterNotebookUrl": {
+      "$ref": "./paths/modelWidget/getJupyterNotebookUrl.json"
+    },
+    "/api-docs": {
+      "get": {}
+    }
+  },
+  "definitions": {
+    "Catalog": {
+      "$ref": "./definitions/appCatalog/catalog.json"
+    },
+    "WorkspaceList": {
+      "$ref": "./definitions/workspace/workspaceList.json"
+    },
+    "Workspace": {
+      "$ref": "./definitions/workspace/workspace.json"
+    },
+    "ModuleList": {
+      "$ref": "./definitions/workspace/moduleList.json"
+    },
+    "Module": {
+      "$ref": "./definitions/workspace/module.json"
+    },
+    "ErrorResponse": {
+      "$ref": "./definitions/common/errorResponse.json"
+    },
+    "User": {
+      "$ref": "./definitions/identity/user.json"
+    },
+    "UserEmails": {
+      "$ref": "./definitions/user/userEmails.json"
+    }
+  }
+}

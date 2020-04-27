@@ -1,0 +1,6 @@
+{
+    "name": "Authorization",
+    "in": "header",
+    "type": "string",
+    "description": "Bearer XXXXXXXXXXXXX"
+}

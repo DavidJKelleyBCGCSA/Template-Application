@@ -1,0 +1,13 @@
+{
+  "required": [
+    "workspaces"
+  ],
+  "properties": {
+    "workspaces": {
+      "type": "array",
+      "items": {
+        "$ref": "./workspace.json"
+      }
+    }
+  }
+}

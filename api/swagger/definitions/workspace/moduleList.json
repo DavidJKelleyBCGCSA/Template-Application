@@ -1,0 +1,14 @@
+{
+  "description": "List of modules",
+  "required": [
+    "modules"
+  ],
+  "properties": {
+    "modules": {
+      "type": "array",
+      "items": {
+        "$ref": "./module.json"
+      }
+    }
+  }
+}

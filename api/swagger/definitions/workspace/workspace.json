@@ -1,0 +1,27 @@
+{
+  "required": [
+    "title"
+  ],
+  "properties": {
+    "id": {"type": "integer"},
+    "number": {"type": "string"},
+    "title": {"type": "string"},
+    "description": {"type": "string"},        
+    "status": {"type":  "string"},
+    "version": {"type": "integer"},
+    "environment": {"type": "string"},
+    "createdAt": {"type": "string"},
+    "updatedAt": {"type": "string"},
+    "owner": {"type": "object", "$ref": "./../user/user.json"},
+    "workspaceMembers": {
+        "type":  "array",
+        "items": {
+            
+    }},
+    "workspacInvitations":  {
+        "type":  "array",
+        "items": {            
+    }}
+  }
+}
+

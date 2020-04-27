@@ -1,0 +1,13 @@
+{
+  "required": [
+    "name"
+  ],
+  "properties": {
+    "name": {"type": "string"},
+    "description": {"type": "string"},
+    "workspace": {"type": "string"},
+    "config": {"type": "string"},
+    "createdAt": {"type": "string"},
+    "updatedAt": {"type": "string"}
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "properties": {
+    "id": {"type": "integer"},
+    "number": {"type": "string"},
+    "title": {"type": "string"}
+  }
+}
+

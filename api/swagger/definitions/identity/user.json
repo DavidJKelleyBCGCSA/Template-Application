@@ -1,0 +1,10 @@
+{
+  "required": [
+    "id'",
+    "userId"
+  ],
+  "properties": {
+    "id": { "type": "integer" },
+    "userId": { "type":  "string" } 
+  }
+}

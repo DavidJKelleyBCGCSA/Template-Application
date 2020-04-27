@@ -1,0 +1,12 @@
+{
+   
+    "properties": {      
+        "type": "array",
+        "items": {
+            "type": "object",
+            "properties": {
+                "email": { "type": "string" }
+            }           
+        }
+      }    
+  }

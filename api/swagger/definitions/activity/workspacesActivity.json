@@ -1,0 +1,14 @@
+{
+
+  "required": [
+    "workspaceId", "lastUpdate"
+  ],
+    "properties": {
+        "workspaceId": {"type": "integer"},
+        "workspace": {
+            "type": "object", 
+            "$ref": "../workspace/workspaceLight.json"
+        },
+        "lastUpdate": {"type": "string"}      
+    }
+  }
