@@ -1,0 +1,33 @@
+{
+  "post": {
+    "operationId": "setParameters",
+    "description": "Sets parameters for a given Widget",
+    "parameters": [
+      {
+        "name": "widgetInstanceId",
+        "in": "body",
+        "description": "ID for the WidgetInstance to set source input for",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "name": "parameters",
+        "in": "body",
+        "description": "Object containing parameters to set.  Note will only overwrite parameters if included in supplied object.  Other parameters will remain in place on widgetInstance.",
+        "required": true,
+        "type": "object"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

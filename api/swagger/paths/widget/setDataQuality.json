@@ -1,0 +1,26 @@
+{
+  "get": {
+    "operationId": "setDataQuality",
+    "description": "Set a data Quality by Widget Id",
+    "parameters": [
+      {
+        "name": "widgetId",
+        "in": "query",
+        "description": "Id of a widget instance",
+        "required": true,
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

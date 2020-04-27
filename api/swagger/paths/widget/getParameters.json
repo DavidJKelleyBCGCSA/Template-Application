@@ -1,0 +1,26 @@
+{
+  "get": {
+    "operationId": "getParameters",
+    "description": "Gets parameters for a given Widget",
+    "parameters": [
+      {
+        "name": "widgetInstanceId",
+        "in": "query",
+        "description": "ID for the WidgetInstance to get parameters for",
+        "required": true,
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

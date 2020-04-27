@@ -1,0 +1,29 @@
+{
+  "get": {
+    "operationId": "listModules",
+    "description": "Lists modules for this user",
+    "parameters": [
+      {
+        "name": "workspaceId",
+        "in": "query",
+        "description": "Id of workspace",
+        "required": true,
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success",
+        "schema": {
+          "$ref": "../../definitions/workspace/moduleList.json"
+        }
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

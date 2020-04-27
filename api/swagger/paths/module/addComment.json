@@ -1,0 +1,42 @@
+{
+  
+    "post": {
+      "operationId": "addModuleComment",
+      "description": "Add a comment to a module",
+      "parameters": [
+          {
+              "name": "data",
+              "in": "body",
+              "schema": {
+                  "type":"object",
+                  "properties": {
+                      "moduleInstanceId": {
+                          "in": "body",
+                          "description": "module id",
+                          "required": true,
+                          "type": "number"
+                      },
+                      "comment":  {
+                          "in": "body",
+                          "description": "The text of this comment. any user reference should be included like $userId$",
+                          "required": true,
+                          "type": "string",
+                          "example": "Hey $1$, I just uploaded the file!"               
+                      }
+                  }
+              }
+          }      
+      ],
+      "responses": {
+        "200": {
+          "description": "Success"
+        },
+        "default": {
+          "description": "Error",
+          "schema": {
+            "$ref": "../../definitions/common/errorResponse.json"
+          }
+        }
+      }
+    }
+  }

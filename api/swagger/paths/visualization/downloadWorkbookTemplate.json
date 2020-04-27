@@ -1,0 +1,34 @@
+{
+  "get": {
+    "operationId": "downloadWorkbookTemplate",
+    "description": "downloads a chart as a tempalte in .twb",
+    "parameters": [
+      {
+        "name": "widgetInstanceId",
+        "in": "query",
+        "description": "widget's id",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "name": "chartId",
+        "in": "query",
+        "description": "the charts id (woorkbook id in case of tableau)",
+        "required": true,
+        "type": "string"
+      }     
+    ],
+    "responses": {
+        "200": { 
+            "description": "Success"
+          }
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  
+}

@@ -1,0 +1,46 @@
+{
+  "post": {
+    "operationId": "setOutput",
+    "description": "Sets the Widget to use as an output for the current Widget",
+    "parameters": [
+        {
+            "name": "data",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                    "widgetInstanceId": {
+                        "in": "body",
+                        "description": "ID for the WidgetInstance to set source output for",
+                        "required": true,
+                        "type": "integer"
+                      },
+                      "outputWidgetInstanceId": {
+                        "in": "body",
+                        "description": "ID for the WidgetInstance to use as source output",
+                        "required": true,
+                        "type": "integer"
+                      },
+                      "replace": {
+                        "in": "body",
+                        "description": "true if we have to replace instead of add a new output",
+                        "required": false,
+                        "type": "boolean"
+                      }
+                }
+            }
+        }      
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

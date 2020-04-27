@@ -1,0 +1,26 @@
+{
+  "post": {
+    "operationId": "saveOutput",
+    "description": "Accepts stream to save to output table of widget in datawarehouse",
+    "parameters": [
+      {
+        "name": "widgetInstanceId",
+        "in": "query",
+        "description": "ID for the WidgetInstance to set source input for",
+        "required": true,
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

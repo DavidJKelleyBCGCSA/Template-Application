@@ -1,0 +1,26 @@
+{
+  "get": {
+    "operationId": "listWidgetsByModuleInstance",
+    "description": "Lists widgets by module instance",
+    "parameters": [
+      {
+        "name": "moduleInstanceId",
+        "in": "query",
+        "description": "Id of a module instance",
+        "required": true,
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

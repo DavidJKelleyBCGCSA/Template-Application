@@ -1,0 +1,40 @@
+{
+  "post": {
+    "operationId": "removeInput",
+    "description": "Removes an input of this widget",
+    "parameters": [
+        {
+            "name": "data",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                    "widgetInstanceId": {
+                        "in": "body",
+                        "description": "ID for the WidgetInstance to set source input for",
+                        "required": true,
+                        "type": "integer"
+                      },
+                    "inputWidgetInstanceId":  {
+                        "in": "body",
+                        "description": "ID for the WidgetInstance to remove from source input",
+                        "required": true,
+                        "type": "integer"
+                      }
+                }
+            }
+        }      
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

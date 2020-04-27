@@ -1,0 +1,36 @@
+{
+  "get": {
+    "operationId": "listUserEmails",
+    "description": "Lists emails of users",
+    "parameters": [
+      {
+        "name": "prefix",
+        "in": "query",
+        "description": "the email prefix to search for",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "top",
+        "in": "query",
+        "description": "max results count. (máx 10)",
+        "required": false,
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success",
+        "schema": {
+          "$ref": "../../definitions/user/userEmails.json"
+        }
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

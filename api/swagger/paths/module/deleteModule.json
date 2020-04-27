@@ -1,0 +1,34 @@
+{
+  "post": {
+    "operationId": "deleteModule",
+    "description": "Deletes a module instance ",
+    "parameters": [
+        {
+            "name": "data",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                    "moduleInstanceId": {
+                        "in": "body",
+                        "description": "id of the module",
+                        "required": true,
+                        "type": "integer"
+                    }
+                }
+            }
+        }        
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

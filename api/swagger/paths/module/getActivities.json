@@ -1,0 +1,34 @@
+{
+  "get": {
+    "operationId": "getActivities",
+    "description": "Get the activites of this module by module Id",
+    "parameters": [
+      {
+        "name": "moduleInstanceId",
+        "in": "query",
+        "description": "Id of a module",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "name": "deepMode",
+        "in": "query",
+        "description": "If we have to also search for all widgets activites of this module",
+        "required": false,
+        "defaultValue": true,
+        "type": "boolean"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

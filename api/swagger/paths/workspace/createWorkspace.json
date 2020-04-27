@@ -1,0 +1,80 @@
+{
+  "post": {
+    "operationId": "createWorkspace",
+    "description": "Creates new workspaces for this user",
+    "parameters": [
+        {
+            "name": "credentials",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                   "title": {
+                        "in": "body",
+                        "description": "Title of workspace",
+                        "required": true,
+                        "type": "string"
+                    },
+                    "number": {
+                        "in": "body",
+                        "description": "Title of workspace",
+                        "required": true,
+                        "type": "string"
+                    },
+                   "ownerId": {
+                        "in": "body",
+                        "description": "ID of User owning this workspace",
+                        "required": true,
+                        "type": "integer",
+                        "example": 1
+                    },
+                   "description": {
+                        "in": "body",
+                        "description": "Description text for workspace",
+                        "required": false,
+                        "type": "string"
+                    },
+                   "environment": {
+                        "in": "body",
+                        "description": "Deployment environment for this workspace",
+                        "required": true,
+                        "type": "string",
+                        "example": "STAGING"
+                    },
+                  "warehouseAccountId":  {
+                        "name": "",
+                        "in": "body",
+                        "description": "ID for datawarehouse account to be used for client data storage for this workspace",
+                        "required": true,
+                        "example": 1,
+                        "type": "integer"
+                    },
+                    "emails":{
+                        "in": "body",
+                        "description": "list of emails fo members and no members to be invited",
+                        "required": false,
+                        "type": "array",
+                        "example": [],
+                        "items": {
+                            "type": "string",                            
+                            "required": false
+                        }
+                          
+                    }
+                }
+            }
+        }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

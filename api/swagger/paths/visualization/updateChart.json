@@ -1,0 +1,55 @@
+{
+  "post": {
+    "operationId": "updateChart",
+    "description": "update a  chart ",
+    "parameters": [
+      {
+        "name": "widgetInstanceId",
+        "in": "body",
+        "description": "widget's id",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "name": "inputWidgetInstanceId",
+        "in": "body",
+        "description": "input widget's id",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "name": "title",
+        "in": "body",
+        "description": "title",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "description",
+        "in": "body",
+        "description": "description",
+        "required": false,
+        "type": "string"
+      },
+      {
+        "name": "chartId",
+        "in": "body",
+        "description": "chart id",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "responses": {
+        "200": { 
+            "description": "Success"
+          }
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  
+}

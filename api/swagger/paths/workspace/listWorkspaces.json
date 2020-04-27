@@ -1,0 +1,20 @@
+{   
+  "get": {
+    "operationId": "listWorkspaces",
+    "description": "Lists workspaces for this user",
+    "responses": {
+      "200": {
+        "description": "Success",
+        "schema": {
+          "$ref": "../../definitions/workspace/workspaceList.json"
+        }
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

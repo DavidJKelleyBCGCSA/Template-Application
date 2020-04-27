@@ -1,0 +1,45 @@
+{
+  "get": {
+    "operationId": "getWorkspaceDiscussions",
+    "description": "Get the discussion of this workspace by workspace Id",
+    "parameters": [
+      {
+        "name": "workspaceId",
+        "in": "query",
+        "description": "Id of a workspace",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "name": "deepMode",
+        "in": "query",
+        "description": "If we have to also search for all modules and widgets comments of this workspace",
+        "required": false,
+        "defaultValue": true,
+        "type": "boolean"
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "description": "max count of results to return",
+        "required": false,        
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success",
+        "schema": {
+            "type": "array",
+            "$ref": "../../definitions/discussion/comment.json"
+        }
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

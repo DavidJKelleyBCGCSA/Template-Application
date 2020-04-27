@@ -1,0 +1,27 @@
+{
+  "get": {
+    "operationId": "downloadWorkbookTemplateFromWorkbook",
+    "description": "downloads a chart as a tempalte in .twb from a workbook with xls as datasrouce",
+    "parameters": [
+      {
+        "name": "url",
+        "in": "query",
+        "description": "widget's id",
+        "required": true,
+        "type": "string"
+      }   
+    ],
+    "responses": {
+        "200": { 
+            "description": "Success"
+          }
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  
+}

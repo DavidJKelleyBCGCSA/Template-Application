@@ -1,0 +1,46 @@
+{
+  "post": {
+    "operationId": "createModule",
+    "description": "Creates new module instance in user's workspace",
+    "parameters": [
+        {
+            "name": "data",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                    "name": {
+                        "in": "body",
+                        "description": "Name of workspace",
+                        "required": true,
+                        "type": "string"
+                      },
+                    "description":  {
+                        "in": "body",
+                        "description": "Description text for workspace",
+                        "required": false,
+                        "type": "string"
+                      },
+                    "workspaceId":  {
+                        "in": "body",
+                        "description": "Id for this workspace",
+                        "required": true,
+                        "type": "integer"
+                      }
+                }
+            }
+        }      
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

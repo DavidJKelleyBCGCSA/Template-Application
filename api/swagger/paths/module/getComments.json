@@ -1,0 +1,45 @@
+{
+  "get": {
+    "operationId": "getModuleDiscussions",
+    "description": "Get the discussion of this module",
+    "parameters": [
+      {
+        "name": "moduleId",
+        "in": "query",
+        "description": "Id of a module",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "name": "deepMode",
+        "in": "query",
+        "description": "If we have to also search for all widgets comments of this module",
+        "required": false,
+        "defaultValue": true,
+        "type": "boolean"
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "description": "max count of results to return",
+        "required": false,        
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success",
+        "schema": {
+            "type": "array",
+            "$ref": "../../definitions/discussion/comment.json"
+        }
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

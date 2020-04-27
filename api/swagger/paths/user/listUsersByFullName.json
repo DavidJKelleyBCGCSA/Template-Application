@@ -1,0 +1,37 @@
+{
+  "get": {
+    "operationId": "listUsersByFullName",
+    "description": "Lists users by full name",
+    "parameters": [
+      {
+        "name": "prefix",
+        "in": "query",
+        "description": "the first or last name prefix to search with",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "top",
+        "in": "query",
+        "description": "max results count. (máx 10)",
+        "required": false,
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success",
+        "schema": {
+          "type": "array",
+          "$ref": "../../definitions/user/user.json"
+        }
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

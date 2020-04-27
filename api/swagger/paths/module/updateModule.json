@@ -1,0 +1,46 @@
+{
+  "post": {
+    "operationId": "updateModule",
+    "description": "Updates a module instance",
+    "parameters": [
+        {
+            "name": "data",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                    "moduleInstanceId": {
+                        "in": "body",
+                        "description": "id of the module",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    "title": {
+                        "in": "body",
+                        "description": "Title of module",
+                        "required": false,
+                        "type": "string"
+                    },
+                    "description": {
+                        "in": "body",
+                        "description": "Description text for module",
+                        "required": false,
+                        "type": "string"
+                    }
+                }
+            }
+        } 
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

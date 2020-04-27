@@ -1,0 +1,37 @@
+{
+  "get": {
+    "operationId": "getWidgetDiscussions",
+    "description": "Get the discussion of this widget",
+    "parameters": [
+      {
+        "name": "widgetId",
+        "in": "query",
+        "description": "Id of a widget",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "description": "max count of results to return",
+        "required": false,        
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success",
+        "schema": {
+            "type": "array",
+            "$ref": "../../definitions/discussion/comment.json"
+        }
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

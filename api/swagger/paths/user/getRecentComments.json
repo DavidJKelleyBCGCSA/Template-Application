@@ -1,0 +1,30 @@
+{
+  "get": {
+    "operationId": "getRecentDiscussions",
+    "description": "Get the discussions of this user",
+    "parameters": [
+      {
+        "name": "limit",
+        "in": "query",
+        "description": "count of results to return. Max will be always 10",
+        "required": false,        
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success",
+        "schema": {
+            "type": "array",
+            "$ref": "../../definitions/discussion/comment.json"
+        }
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

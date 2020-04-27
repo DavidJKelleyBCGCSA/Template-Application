@@ -1,0 +1,26 @@
+{
+  "get": {
+    "operationId": "getTrustedToken",
+    "description": "gets a trusted authentication token",
+    "parameters": [
+      {
+        "name": "widgetInstanceId",
+        "in": "query",
+        "description": "widgetInstanceId",
+        "required": true,
+        "type": "integer"
+      }
+    ],
+    "responses": {
+        "200": { 
+            "description": "Success"
+          }
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }    
+  }
+}

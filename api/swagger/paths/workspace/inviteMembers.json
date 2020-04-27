@@ -1,0 +1,46 @@
+{
+  
+  "post": {
+    "operationId": "inviteMembers",
+    "description": "Invite members to a  workspace",
+    "parameters": [
+        {
+            "name": "data",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                    "workspaceId": {
+                        "in": "body",
+                        "description": "workspace id",
+                        "required": true,
+                        "type": "number"
+                    },
+                    "emails":  {
+                        "in": "body",
+                        "description": "list of emails fo members and no members to be invited",
+                        "required": false,
+                        "type": "array",
+                        "example": ["someone@email.com"],
+                        "items": {
+                            "type": "string",                            
+                            "required": false
+                        }
+                    }
+                }
+            }
+        }      
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

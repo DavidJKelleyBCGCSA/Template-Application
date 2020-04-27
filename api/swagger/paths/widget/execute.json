@@ -1,0 +1,26 @@
+{
+  "get": {
+    "operationId": "execute",
+    "description": "Raises MANUAL_TRIGGER event for widget to cause it to start to execute",
+    "parameters": [
+      {
+        "name": "widgetInstanceId",
+        "in": "query",
+        "description": "ID for the WidgetInstance to execute",
+        "required": true,
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

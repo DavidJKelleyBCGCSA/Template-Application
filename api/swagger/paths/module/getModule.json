@@ -1,0 +1,29 @@
+{
+  "get": {
+    "operationId": "getModule",
+    "description": "Get a Module data",
+    "parameters": [
+        {
+          "name": "moduleId",
+          "in": "query",
+          "description": "Id of the module",
+          "required": true,
+          "type": "integer"
+        }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success",
+        "schema": {
+          "$ref": "../../definitions/workspace/module.json"
+        }
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

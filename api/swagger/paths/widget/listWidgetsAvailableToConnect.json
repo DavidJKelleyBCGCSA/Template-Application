@@ -1,0 +1,33 @@
+{
+    "get": {
+        "operationId": "listWidgetsAvailableToConnect",
+        "description": "Gets available wifget by widget isntance and module isntance",
+        "parameters": [
+            {
+                "name": "widgetInstanceId",
+                "in": "query",
+                "description": "Id of widgetInstance",
+                "required": true,
+                "type": "integer"
+            },
+            {
+                "name": "moduleInstanceId",
+                "in": "query",
+                "description": "Id of moduleInstance",
+                "required": true,
+                "type": "integer"
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Success"
+            },
+            "default": {
+                "description": "Error",
+                "schema": {
+                    "$ref": "../../definitions/common/errorResponse.json"
+                }
+            }
+        }
+    }
+}

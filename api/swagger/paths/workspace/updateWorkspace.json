@@ -1,0 +1,46 @@
+{
+  "post": {
+    "operationId": "updateWorkspace",
+    "description": "Updates a workspace where the user is the owner",
+    "parameters": [
+        {
+            "name": "data",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                    "workspaceId": {
+                        "in": "body",
+                        "description": "id of the workspace",
+                        "required": true,
+                        "type": "integer"
+                       },
+                    "title": {
+                        "in": "body",
+                        "description": "Title of workspace",
+                        "required": false,
+                        "type": "string"
+                      },
+                    "description": {
+                        "in": "body",
+                        "description": "Description text for workspace",
+                        "required": false,
+                        "type": "string"
+                      }                    
+                }
+            }
+        }           
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

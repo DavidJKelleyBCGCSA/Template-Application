@@ -1,0 +1,42 @@
+{
+  "post": {
+    "operationId": "updateInputSchema",
+    "description": "Updates a widget input schema",
+    "parameters": [
+        {
+            "name": "data",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                    "widgetInstanceId": {
+                        "name": "",
+                        "in": "body",
+                        "description": "id of the widget",
+                        "required": true,
+                        "type": "integer"
+                    },                   
+                    "inputSchema": {
+                      "name": "",
+                      "in": "body",
+                      "description": "input schema for widget",
+                      "required": false,
+                      "type": "array"
+                  }        
+                }
+            }
+        }        
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

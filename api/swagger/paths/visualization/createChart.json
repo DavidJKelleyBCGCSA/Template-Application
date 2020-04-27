@@ -1,0 +1,55 @@
+{
+  "post": {
+    "operationId": "createChart",
+    "description": "create a new chart ",
+    "parameters": [
+      {
+        "name": "widgetInstanceId",
+        "in": "body",
+        "description": "widget's id",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "name": "inputWidgetInstanceId",
+        "in": "body",
+        "description": "input widget's id",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "name": "title",
+        "in": "body",
+        "description": "title",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "description",
+        "in": "body",
+        "description": "description",
+        "required": false,
+        "type": "string"
+      },
+      {
+        "name": "workbookURL",
+        "in": "body",
+        "description": "the workbook url",
+        "required": false,
+        "type": "string"
+      }
+    ],
+    "responses": {
+        "200": { 
+            "description": "Success"
+          }
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  
+}

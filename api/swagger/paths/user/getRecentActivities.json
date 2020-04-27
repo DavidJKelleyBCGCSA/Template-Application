@@ -1,0 +1,26 @@
+{
+  "get": {
+    "operationId": "getRecentActivities",
+    "description": "Get the activites of this user",
+    "parameters": [
+      {
+        "name": "limit",
+        "in": "query",
+        "description": "count of results to return. Max will be always 10",
+        "required": false,        
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

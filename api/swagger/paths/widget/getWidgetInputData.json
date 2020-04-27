@@ -1,0 +1,26 @@
+{
+  "get": {
+    "operationId": "getWidgetInputData",
+    "description": "Get a widget outputs by Widget Id",
+    "parameters": [
+      {
+        "name": "widgetId",
+        "in": "query",
+        "description": "Id of a widget instance",
+        "required": true,
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

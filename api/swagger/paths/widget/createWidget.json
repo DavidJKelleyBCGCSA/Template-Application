@@ -1,0 +1,58 @@
+{
+  "post": {
+    "operationId": "createWidget",
+    "description": "Createa a new Widget",
+    "parameters": [
+        {
+            "name": "data",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                    "id": {
+                        "in": "body",
+                        "description": "Id of widget",
+                        "required": true,
+                        "type": "integer"
+                      },
+                    "title": {
+                        "in": "body",
+                        "description": "Title of widget",
+                        "required": true,
+                        "type": "string"
+                      },
+                    "description":  {
+                        "in": "body",
+                        "description": "Description of widget",
+                        "required": false,
+                        "type": "string"
+                      },
+                    "parameters": {
+                        "in": "body",
+                        "description": "Parameters set for widget",
+                        "required": true,
+                        "type": "object"
+                      },
+                    "inputs":  {
+                        "in": "body",
+                        "description": "Inputs selected for widget",
+                        "required": false,
+                        "type": "object"
+                      }
+                }
+            }
+        }      
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

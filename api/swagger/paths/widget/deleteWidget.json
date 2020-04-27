@@ -1,0 +1,34 @@
+{
+  "post": {
+    "operationId": "deleteWidget",
+    "description": "Deletes a widget instance ",
+    "parameters": [
+        {
+            "name": "data",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                   "widgetInstanceId": {
+                        "in": "body",
+                        "description": "id of the widget",
+                        "required": true,
+                        "type": "integer"
+                    }
+                }
+            }
+        }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

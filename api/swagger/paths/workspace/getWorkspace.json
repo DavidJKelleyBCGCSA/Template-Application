@@ -1,0 +1,29 @@
+{
+  "get": {
+    "operationId": "getWorkspace",
+    "description": "Get a workspace data",
+    "parameters": [
+        {
+          "name": "id",
+          "in": "query",
+          "description": "Id of workspace",
+          "required": true,
+          "type": "integer"
+        }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success",
+        "schema": {
+          "$ref": "../../definitions/workspace/workspace.json"
+        }
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

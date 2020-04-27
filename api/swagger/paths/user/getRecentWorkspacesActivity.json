@@ -1,0 +1,32 @@
+{
+  "get": {
+    "operationId": "getRecentWorkspacesActivity",
+    "description": "Get the workspaces activites of this user. (no repeat)",
+    "parameters": [
+      {
+        "name": "limit",
+        "in": "query",
+        "description": "count of results to return. Max will be always 10",
+        "required": false,        
+        "type": "integer"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success",
+        "schema": {
+            "type": "array",
+            "items": {
+                "$ref": "../../definitions/activity/workspacesActivity.json"
+            }        
+          }
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

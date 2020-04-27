@@ -1,0 +1,58 @@
+{
+  "post": {
+    "operationId": "updateWidget",
+    "description": "Updates a widget instance",
+    "parameters": [
+        {
+            "name": "data",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                    "widgetInstanceId": {
+                        "name": "",
+                        "in": "body",
+                        "description": "id of the widget",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    "title": {
+                        "name": "",
+                        "in": "body",
+                        "description": "Title of widget",
+                        "required": false,
+                        "type": "string"
+                    },
+                    "description": {
+                        "name": "",
+                        "in": "body",
+                        "description": "Description text for widget",
+                        "required": false,
+                        "type": "string"
+                    },
+                     
+                    "parameters": {
+                      "name": "",
+                      "in": "body",
+                      "description": "Parameters for widget",
+                      "required": false,
+                      "type": "object"
+                  }
+                  
+                }
+            }
+        }        
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

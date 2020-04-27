@@ -1,0 +1,33 @@
+{
+  "post": {
+    "operationId": "setOutputSchema",
+    "description": "Sets output schema for widget",
+    "parameters": [
+      {
+        "name": "widgetInstanceId",
+        "in": "body",
+        "description": "ID for the WidgetInstance to set source input for",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "name": "schema",
+        "in": "body",
+        "description": "Schema for output of widget",
+        "required": true,
+        "type": "object"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

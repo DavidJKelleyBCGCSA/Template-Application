@@ -1,0 +1,40 @@
+{
+    "post": {
+      "operationId": "setParametersSlug",
+      "description": "Sets parameters for a given Widget.",
+      "parameters": [
+        {
+          "name": "moduleInstanceId",
+          "in": "body",
+          "description": "ID for the module instance where the widget instance resides.",
+          "required": true,
+          "type": "integer"
+        },
+        {
+            "name": "widgetInstanceSlug",
+            "in": "body",
+            "description": "Slug for the WidgetInstance.",
+            "required": true,
+            "type": "integer"
+          },
+        {
+          "name": "parameters",
+          "in": "body",
+          "description": "Object containing parameters to set.  Note will only overwrite parameters if included in supplied object.  Other parameters will remain in place on widgetInstance.",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Success"
+        },
+        "default": {
+          "description": "Error",
+          "schema": {
+            "$ref": "../../definitions/common/errorResponse.json"
+          }
+        }
+      }
+    }
+  }

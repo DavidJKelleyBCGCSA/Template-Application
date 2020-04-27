@@ -1,0 +1,46 @@
+{
+  "post": {
+    "operationId": "setInput",
+    "description": "Sets the Widget to use as input for the current DataPrep Widget",
+    "parameters": [
+        {
+            "name": "data",
+            "in": "body",
+            "schema": {
+                "type":"object",
+                "properties": {
+                    "widgetInstanceId": {
+                        "in": "body",
+                        "description": "ID for the WidgetInstance to set source input for",
+                        "required": true,
+                        "type": "integer"
+                      },
+                      "inputWidgetInstanceId": {
+                        "in": "body",
+                        "description": "ID for the WidgetInstance to use as source input",
+                        "required": true,
+                        "type": "integer"
+                      },
+                      "replace": {
+                        "in": "body",
+                        "description": "true if we have to replace instead of add a new input",
+                        "required": false,
+                        "type": "boolean"
+                      }
+                }
+            }
+        }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  }
+}

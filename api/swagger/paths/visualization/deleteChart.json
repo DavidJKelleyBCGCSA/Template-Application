@@ -1,0 +1,34 @@
+{
+  "post": {
+    "operationId": "deleteChart",
+    "description": "deletes a chart ",
+    "parameters": [
+      {
+        "name": "widgetInstanceId",
+        "in": "body",
+        "description": "widget's id",
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "name": "chartId",
+        "in": "body",
+        "description": "the charts id (woorkbook id in case of tableau)",
+        "required": true,
+        "type": "string"
+      }     
+    ],
+    "responses": {
+        "200": { 
+            "description": "Success"
+          }
+      },
+      "default": {
+        "description": "Error",
+        "schema": {
+          "$ref": "../../definitions/common/errorResponse.json"
+        }
+      }
+    }
+  
+}
