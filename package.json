@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@azure/storage-blob": "^12.1.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bcrypt": "^4.0.1",
     "body-parser": "^1.19.0",
     "consultant-ux-client": "git+https://gitlab+deploy-token-132192:z5gezLNBtyxEj1SXYD2U@gitlab.com/omnia-platform/consultant-ux-client.git#1.0.0",
